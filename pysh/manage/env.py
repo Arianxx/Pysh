@@ -23,7 +23,7 @@ class Application:
             # Win下没有readline模块
             pass
         else:
-            readline.parse_and_bind("tag: complete")
+            readline.parse_and_bind("tab: complete")
             readline.set_completer(Completer.search_symbol)
 
         return cls._instance

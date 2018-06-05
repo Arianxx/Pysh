@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="837e61a2-b6bd-48f8-8fe0-90aa39778003" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/pysh/command/pysh.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/pysh.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/contrib/keyword.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/contrib/keyword.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/manage/dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/manage/dispatch.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pysh/manage/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/manage/env.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/manage/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/manage/middleware.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -52,8 +48,8 @@
           <file leaf-file-name="env.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/pysh/manage/env.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="342">
-                  <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+                <state relative-caret-position="378">
+                  <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -743,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/pysh/manage/env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="25" column="28" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+        <state relative-caret-position="378">
+          <caret line="24" column="13" lean-forward="true" selection-start-line="24" selection-start-column="13" selection-end-line="24" selection-end-column="13" />
         </state>
       </provider>
     </entry>
