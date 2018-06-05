@@ -35,7 +35,11 @@ Usage:
                 self.clear_num = self.args[clear_num_index + 1]
         else:
             if len(self.args) > 0:
-                self.num = int(self.args[0])
+                try:
+                    self.num = int(self.args[0])
+                except ValueError as e:
+                    print(e)
+                    self.num = 0
 
     def handler(self):
         History = self.env['History']
@@ -62,4 +66,4 @@ Usage:
                 for h in History.history:
                     print(h)
 
-        return
+        return True

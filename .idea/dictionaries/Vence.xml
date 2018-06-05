@@ -4,13 +4,19 @@
       <w>arian</w>
       <w>arianx</w>
       <w>baka</w>
+      <w>contexte</w>
+      <w>contextlib</w>
       <w>curdir</w>
+      <w>derc</w>
       <w>maxlen</w>
       <w>pids</w>
       <w>pycache</w>
       <w>pysh</w>
+      <w>readline</w>
+      <w>redirector</w>
       <w>resutls</w>
       <w>stdin</w>
+      <w>userprofile</w>
     </words>
   </dictionary>
 </component>

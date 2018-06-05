@@ -1,11 +1,14 @@
 """
 shell本身也是一个应用，可以通过各种方式访问和控制。初次启动时，直接通过dispatch模块启动shell。
+
+TODO: 将参数判断抽象出来，成为单独的一层，应用只需注册参数类型和列表即可，具体判断交由上层执行。
 """
 
 import os
+
 from .exit import ShellExit
-from ..manage.env import Application, Processing
 from ..contrib.parser import Parser
+from ..manage.env import Application
 
 app = Application()
 
@@ -18,10 +21,15 @@ class pysh:
     *******************************
     
            Welcome to Pysh!
+      Type 'help' to get the help.
        Copyright (c) 2018 ArianX
        
     *******************************
              """
+    usage = """
+Usage:
+    pysh：启动pysh shell
+            """
 
     def __init__(self, *args):
         pass
@@ -29,9 +37,18 @@ class pysh:
     def handler(self):
         print(self.slogan)
 
+        self._poll()
+
+        return True
+
+    def _poll(self):
         while True:
             line_slogan = self.line_symbol + self.curdir + '$'
-            raw_command = input(line_slogan).strip()
+            try:
+                raw_command = input(line_slogan).strip()
+            except KeyboardInterrupt:
+                print('\n',self.logout)
+                break
 
             if not raw_command:
                 continue
@@ -40,9 +57,14 @@ class pysh:
 
             try:
                 parser.run()
-            except ShellExit as e:
+            except EOFError:
+                # 如果是输入流被重定向到文件，文件读尽时会弹出这个错误
+                raise ShellExit
+            except ShellExit:
                 print(self.logout)
                 break
+
+        return True
 
     @property
     def curdir(self):

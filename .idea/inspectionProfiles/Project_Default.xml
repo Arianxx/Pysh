@@ -5,6 +5,7 @@
       <option name="ignoredIdentifiers">
         <list>
           <option value="pysh.manage.env.__builtins__" />
+          <option value="pysh.manage.dispatch.Task.id" />
         </list>
       </option>
     </inspection_tool>

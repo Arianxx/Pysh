@@ -1,4 +1,5 @@
 import os
+
 from ..manage.env import Application
 
 app = Application()
@@ -29,14 +30,19 @@ Optional:
         self.args = args or []
         if '-A' in self.args or '-almost-all' in self.args:
             self.almost_all = True
+
         if '-a' in self.args or '-all' in self.args:
             self.all = True
+
         if '-B' in self.args or '-ignore-back-backups' in self.args:
             self.ignore_back_backups = True
+
         if '-r' in self.args or '-reverse' in self.args:
             self.reverse = True
+
         if '-l' in self.args or '-list' in self.args:
             self.list = True
+
         if '--help' in self.args:
             self.help = True
 
@@ -58,10 +64,18 @@ Optional:
             return
 
         for path in self.paths:
+            path = path.strip('"').strip("'")
             try:
                 dirs = os.listdir(path)
             except FileNotFoundError as e:
                 print(e)
+                return False
+            except NotADirectoryError as e:
+                print(e)
+                return False
+            except OSError as e:
+                print(e)
+                return False
             else:
                 if self.ignore_back_backups:
                     dirs = [dir for dir in dirs if not dir.endswith('~')]
@@ -76,4 +90,4 @@ Optional:
                     print('\n'.join(dirs))
                 else:
                     print('  '.join(dirs))
-        return
+        return True

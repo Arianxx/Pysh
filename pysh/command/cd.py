@@ -1,4 +1,5 @@
 import os
+
 from ..manage.env import Application
 
 app = Application()
@@ -16,7 +17,10 @@ Usage:
         if '--help' in args:
             self.help = True
         else:
-            self.path = args[0]
+            try:
+                self.path = args[0].strip('"').strip("'")
+            except IndexError as e:
+                print('没有提供路径')
 
     def handler(self):
         if self.path:
@@ -24,9 +28,11 @@ Usage:
                 os.chdir(self.path)
             except FileNotFoundError as e:
                 print(e)
+                return False
             except NotADirectoryError as e:
                 print(e)
+                return False
         elif self.help:
             print(self.usage)
 
-        return
+        return True
