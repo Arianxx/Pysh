@@ -16,6 +16,16 @@ class Application:
         if not getattr(cls, '_instance', None):
             cls._instance = super().__new__(cls, *args, **kwargs)
 
+        try:
+            import readline
+            from .middleware import Completer
+        except ImportError:
+            # Win下没有readline模块
+            pass
+        else:
+            readline.parse_and_bind("tag: complete")
+            readline.set_completer(Completer.search_symbol)
+
         return cls._instance
 
     def register(self, cls):

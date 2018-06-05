@@ -1,5 +1,7 @@
-import contextlib
-import sys
+import contextlib, sys
+from itertools import chain
+
+from ..manage.env import Application, Variable, EnvVariable
 
 
 class StdoutRedirection:
@@ -135,3 +137,18 @@ class StdinRedirection:
             if self.file:
                 self.file.close()
             sys.stdin = origin_stdin
+
+
+class Completer:
+    @classmethod
+    def search_symbol(cls, text, state):
+        names = [name for name in chain(
+            Application.app,
+            Variable.variable,
+            EnvVariable.variable
+        ) if name.startswith(text)]
+        try:
+            return names[state]
+        except IndexError:
+            return False
+

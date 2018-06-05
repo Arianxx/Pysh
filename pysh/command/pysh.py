@@ -12,7 +12,6 @@ from ..manage.env import Application
 
 app = Application()
 
-
 @app.register
 class pysh:
     line_symbol = '#'
@@ -58,7 +57,7 @@ Usage:
             try:
                 parser.run()
             except EOFError:
-                # 如果是输入流被重定向到文件，文件读尽时会弹出这个错误
+                # 如果是输入流被重定向到文件，文件读尽时会弹出这个错误，代表执行完毕，退出shell
                 raise ShellExit
             except ShellExit:
                 print(self.logout)

@@ -144,7 +144,7 @@ class Script:
 
     def _parse(self):
         """
-        重定向输入到文件
+        重定向输入到文件,一行一行解析
         """
         from ..contrib.parser import Parser
 

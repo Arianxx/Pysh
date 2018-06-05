@@ -474,12 +474,8 @@ def get_sub_tokens(sub_tokens, tokens):
             sub_token.clear()
 
         if find:
-            # new_tokens = tokens[0:bq_1 + 1]
-            # tokens = tokens[bq_1 + 1:]
             tokens.pop(bq_1)
             bq_2 = tokens.index(BackQuote.char)
-            # new_tokens += tokens[bq_2:]
-            # tokens = new_tokens
             sub_tokens.append(sub_token)
             try:
                 get_sub_tokens(sub_tokens, tokens[bq_2 + 1:])
