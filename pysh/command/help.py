@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from ..contrib.keyword import Symbol, Keyword
 from ..manage.env import Application
 

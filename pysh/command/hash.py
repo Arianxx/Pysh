@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from ..manage.env import Application, EnvVariable
 
 app = Application()

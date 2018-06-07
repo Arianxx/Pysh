@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 这里定义具体的各个符号和语句的行为，并由parser.Handler.run进行调用
 """
@@ -240,7 +241,8 @@ def left_angel(self, tokens):
             except UnicodeDecodeError as e:
                 # 指定一个非文本文件，读取时会弹出此错误
                 print(e)
-            self.handler.tokens = None
+            finally:
+                self.handler.tokens = None
     return
 
 

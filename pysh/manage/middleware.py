@@ -1,10 +1,11 @@
-import contextlib, sys
+# -*- coding: utf-8 -*-
+import contextlib, sys, os, itertools
 from itertools import chain
 
-from ..manage.env import Application, Variable, EnvVariable
+from ..manage.env import Application, Variable, EnvVariable, History
 
 
-class StdoutRedirection:
+class StdoutRedirection():
     """
     重定向输出
     """
@@ -15,7 +16,8 @@ class StdoutRedirection:
         否则将输出重定向到内部列表pipe。
         """
         self.file = None
-        self.pip = None
+        self.tmp_file = None
+        self.pipe = []
         if file_path:
             try:
                 if file_override:
@@ -31,21 +33,13 @@ class StdoutRedirection:
             except PermissionError as e:
                 raise e
         else:
-            pass
-
-        if not self.file:
-            self.pipe = []
-
-    def write(self, text):
-        if self.file:
-            try:
-                self.file.write(text)
-            except ValueError:
-                # 文件可能被关闭
-                pass
-        else:
-            # 没文件就储存到内部列表
-            self.pipe.append(text)
+            for num in itertools.count():
+                try:
+                    self.tmp_file = open('temp'+str(num)+'.txt', 'wt')
+                except FileExistsError:
+                    continue
+                else:
+                    break
 
     @contextlib.contextmanager
     def context(self):
@@ -55,21 +49,29 @@ class StdoutRedirection:
         contextlib.contextmanager装饰器自动将协程转换为上下文管理器
         yield前为进入with时执行，yield为with语句返回值，yield后退出with时执行
        """
-        origin_write = sys.stdout.write
-        sys.stdout.write = self.write
+        origin_stdout = sys.stdout
+
+        if self.file:
+            sys.stdout = self.file
+        else:
+            sys.stdout = self.tmp_file
+
         try:
             yield self
         except Exception as e:
             raise e
         finally:
             # 不论弹出什么异常，都先还原输出流
-            sys.stdout.write = origin_write
-            if self.file:
-                self.file.close()
             sys.stdout.flush()
+            sys.stdout.close()
+            sys.stdout = origin_stdout
 
+            with open(self.tmp_file.name, 'rt') as file:
+                self.pipe = file.readlines()
 
-class StdinRedirection:
+            os.remove(self.tmp_file.name)
+
+class StdinRedirection():
     """
     重定向输入
     """
@@ -106,12 +108,12 @@ class StdinRedirection:
                 # source没有iter方法
                 raise e
 
-    def read(self):
+    def read(self, *args, **kwargs):
         self._read()
 
         return '\n'.join(self._source)
 
-    def readline(self):
+    def readline(self, *args, **kwargs):
         self._read()
 
         return next(self._source)
@@ -142,7 +144,11 @@ class StdinRedirection:
 class Completer:
     @classmethod
     def search_symbol(cls, text, state):
+        """
+        用于readline模块，以实现linux下的行编辑自动补全功能
+        """
         names = [name for name in chain(
+            History.history,
             Application.app,
             Variable.variable,
             EnvVariable.variable
@@ -151,4 +157,3 @@ class Completer:
             return names[state]
         except IndexError:
             return False
-

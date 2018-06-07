@@ -1,14 +1,15 @@
+# -*- coding: utf-8 -*-
 """
 处理shell一切环境信息，包括记录注册的应用以及从外部环境读取变量等
 """
-import os
-from collections import deque
+import os, sys
+from collections import deque, OrderedDict
 from datetime import datetime
 from functools import wraps
 
 
 class Application:
-    app = {}
+    app = OrderedDict()
 
     @staticmethod
     def __new__(cls, *args, **kwargs):
@@ -120,7 +121,8 @@ class History:
 
         @wraps(func)
         def decorator(self, command, *args, backend=False, daemon=False, join=False):
-            cls.history.append(command)
+            args = args or []
+            cls.history.append(' '.join([command] + list(args)))
             return func(self, command, *args, backend=backend, daemon=daemon, join=join)
 
         return decorator
@@ -155,7 +157,7 @@ class Variable:
     """
     储存变量
     """
-    variable = {}
+    variable = OrderedDict()
 
     @classmethod
     def add(cls, name, value):
@@ -180,9 +182,9 @@ class EnvVariable:
     环境变量，以及外部PATH变量
     """
     env_file_path = '/.env'
-    variable = {}
-    PATH = os.environ['PATH'].split(';')
+    variable = OrderedDict()
     cached = {}
+    PATH = None
 
     @classmethod
     def set_env_variable(cls, name, value):
@@ -210,7 +212,11 @@ class EnvVariable:
             return cls.cached[name]
 
         for dir in cls.PATH:
-            path = os.path.join(dir, name + '.exe')
+            path = os.path.join(dir, name)
+            if os.path.isfile(path):
+                cls.cached_path(name, path)
+                return path
+            path = os.path.join(dir, name + 'exe')
             if os.path.isfile(path):
                 cls.cached_path(name, path)
                 return path
@@ -229,6 +235,11 @@ class EnvVariable:
 
 
 # 以下辅助函数
+
+def get_env_path():
+    PATH = os.environ['PATH']
+    sep = ';' if sys.platform == 'win32' else ':'
+    return PATH.split(sep)
 
 def get_env_variable(EnvVariable):
     """
@@ -258,3 +269,6 @@ def get_env_variable(EnvVariable):
 
 if not EnvVariable.variable:
     EnvVariable.variable = get_env_variable(EnvVariable)
+
+if not EnvVariable.PATH:
+    EnvVariable.PATH = get_env_path()

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Dispatch接受解析之后的参数，将参数分发给应用执行，并执行环境需要的其它操作。
 """
@@ -66,9 +67,12 @@ class Task(Process):
                 rv = self._task.handler()
             else:
                 # 外部命令打开子进程
-                rv = subprocess.call([self.app] + [*self.args])
+                rv = subprocess.call([self.app] + [*self.args],
+                                      stdin=sys.stdin,
+                                      stdout=sys.stdout,
+                                      stderr=sys.stderr)
         except EOFError as e:
-            # 子进程可能会发生io错误
+            # 多进程可能会发生io错误
             print(e)
             rv = False
         except Exception as e:

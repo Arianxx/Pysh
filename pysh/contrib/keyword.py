@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """"
 注册特殊符号或关键字。对tokens做一些与符号本身相关必要的处理（如清洗），具体的调用逻辑交给parser.Handle,
 复杂的行为交给control.SymbolAction/control.KeywordAction。
