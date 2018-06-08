@@ -19,7 +19,11 @@ class Parser:
         self.shlex = shlex(self.token, punctuation_chars=True)
         self.shlex.wordchars += '$.\//:'
 
-        self.tokens = list(self.shlex)
+        try:
+            self.tokens = list(self.shlex)
+        except ValueError as e:
+            print(e)
+            return
 
     def run(self):
         Handler(self).run()
@@ -39,8 +43,12 @@ class Handler:
             # 传入Parser的实例对Handler进行初始化是后来为命令替代改变的特性
             # 原来是直接传入分割后的tokens
             # 所以加入try以适应旧的调用方式
-            tokens = parser
-            self.raw_token = ' '.join(parser)
+            try:
+                tokens = parser
+                self.raw_token = ' '.join(parser)
+            except TypeError as e:
+                print(e)
+                return
 
         tokens = list(filter(lambda token: True if token else False, tokens))
         self.tokens = list(map(lambda token: token.strip(), tokens))
@@ -104,6 +112,10 @@ class Handler:
         """
         重定向、替换相关逻辑
         """
+        if self.tokens:
+            # 管道
+            self.sa.pipe(self.tokens)
+
         if self.tokens:
             # 重定向输入
             self.sa.left_angel(self.tokens)

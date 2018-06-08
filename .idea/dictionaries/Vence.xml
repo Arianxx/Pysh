@@ -17,6 +17,7 @@
       <w>redirector</w>
       <w>resutls</w>
       <w>stdin</w>
+      <w>stdouttemp</w>
       <w>userprofile</w>
     </words>
   </dictionary>

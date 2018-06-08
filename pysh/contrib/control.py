@@ -298,6 +298,34 @@ def back_quote(self, tokens):
     return
 
 
+@SymbolAction.register
+def pipe(self, tokens):
+    """
+    前一个命令的输出作为下一个命令的输入
+    """
+    cls = Symbol.mapping['pipe'].cls
+    if cls.char in tokens:
+        tokens = cls.handle(tokens)
+        for index, token in enumerate(tokens):
+            if index == 0:
+                sr = StdoutRedirection()
+                with sr.context() as sr:
+                    Handler(token).run()
+            elif index == len(tokens) - 1:
+                si = StdinRedirection(source=sr.pipe)
+                with si.context():
+                    Handler(token).run()
+            else:
+                si = StdinRedirection(source=sr.pipe)
+                sr = StdoutRedirection()
+                with si.context():
+                    with sr.context() as sr:
+                        Handler(token).run()
+
+        self.handler.tokens = None
+    return
+
+
 # 以下注册关键字行为
 
 

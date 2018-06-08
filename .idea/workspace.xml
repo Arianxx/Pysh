@@ -2,30 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="837e61a2-b6bd-48f8-8fe0-90aa39778003" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pysh/contrib/line_edit.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pysh/contrib/tools.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Pysh.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Pysh.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Vence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Vence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/cd.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/cd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/echo.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/echo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/exit.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/exit.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/hash.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/hash.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/help.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/help.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/history.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/history.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/kill.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/kill.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/ls.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/ls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/ps.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/ps.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/command/pysh.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/pysh.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pysh/contrib/control.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/contrib/control.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pysh/contrib/keyword.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/contrib/keyword.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pysh/contrib/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/contrib/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/manage/dispatch.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/manage/dispatch.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/manage/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/manage/env.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pysh/manage/middleware.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/manage/middleware.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,46 +18,16 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Pysh$dispatch.coverage" NAME="dispatch Coverage Results" MODIFIED="1527844943904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pysh/manage" />
-    <SUITE FILE_PATH="coverage/Pysh$pysh.coverage" NAME="pysh Coverage Results" MODIFIED="1528382158276" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Pysh$pysh.coverage" NAME="pysh Coverage Results" MODIFIED="1528471140359" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Pysh$shell.coverage" NAME="shell Coverage Results" MODIFIED="1527844906238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pysh/command" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="keyword.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pysh/contrib/keyword.py">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="parser.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pysh/contrib/parser.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1422">
-              <caret line="420" column="21" lean-forward="true" selection-start-line="420" selection-start-column="21" selection-end-line="420" selection-end-column="21" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="dispatch.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pysh/manage/dispatch.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1080">
-              <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="control.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pysh/contrib/control.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="191" selection-start-line="191" selection-end-line="191" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="middleware.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pysh/manage/middleware.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
-              <folding>
-                <element signature="e#24#61#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="290">
+              <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -113,8 +64,6 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/pysh/contrib/tools.py" />
         <option value="$PROJECT_DIR$/pysh/__init__.py" />
-        <option value="$PROJECT_DIR$/pysh/contrib/parser.py" />
-        <option value="$PROJECT_DIR$/pysh/contrib/keyword.py" />
         <option value="$PROJECT_DIR$/pysh/command/pysh.py" />
         <option value="$PROJECT_DIR$/pysh/command/ps.py" />
         <option value="$PROJECT_DIR$/pysh/command/ls.py" />
@@ -126,10 +75,12 @@
         <option value="$PROJECT_DIR$/pysh/command/cd.py" />
         <option value="$PROJECT_DIR$/pysh/command/exit.py" />
         <option value="$PROJECT_DIR$/pysh/contrib/line_edit.py" />
-        <option value="$PROJECT_DIR$/pysh/contrib/control.py" />
         <option value="$PROJECT_DIR$/pysh/manage/env.py" />
         <option value="$PROJECT_DIR$/pysh/manage/dispatch.py" />
+        <option value="$PROJECT_DIR$/pysh/contrib/keyword.py" />
+        <option value="$PROJECT_DIR$/pysh/contrib/control.py" />
         <option value="$PROJECT_DIR$/pysh/manage/middleware.py" />
+        <option value="$PROJECT_DIR$/pysh/contrib/parser.py" />
       </list>
     </option>
   </component>
@@ -144,8 +95,8 @@
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="75" />
-    <option name="width" value="970" />
-    <option name="height" value="542" />
+    <option name="width" value="971" />
+    <option name="height" value="543" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -153,7 +104,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -188,6 +138,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -335,24 +286,25 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-1" width="1936" height="1089" extended-state="6" />
+    <frame x="-7" y="-1" width="1295" height="728" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.18086225" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.1858108" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5003494" side_tool="true" weight="0.32912722" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.4996506" weight="0.17245005" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23133543" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.17770767" />
+      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.4996506" weight="0.1722973" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.13513513" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.20294426" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.4996506" visible="true" weight="0.22397476" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24253732" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23133543" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4996506" weight="0.22297297" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14898786" />
       <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="right" id="Database" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32881" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Debug" order="11" weight="0.20609884" />
       <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Debug" order="11" visible="true" weight="0.3597973" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="right" id="Remote Host" order="3" weight="0.23667377" />
@@ -361,31 +313,30 @@
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49825296" weight="0.32912722" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32881" />
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23133543" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Remote Host" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23720682" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.18086225" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32912722" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.23133543" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32912722" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32881" />
       <window_info anchor="right" id="Database" order="4" />
       <window_info anchor="bottom" id="Terminal" order="10" weight="0.21766561" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" weight="0.32985386" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32912722" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="right" id="SciView" order="5" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.2039958" />
-      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32912722" />
+      <window_info id="Favorites" order="2" side_tool="true" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -437,7 +388,7 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="184" />
+      <option name="time" value="189" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -609,20 +560,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pysh.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" lean-forward="true" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/command/pysh.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="23" selection-start-column="23" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pysh/command/ps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -679,13 +616,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pysh/command/exit.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -700,30 +630,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/contrib/line_edit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="10" selection-start-line="3" selection-start-column="10" selection-end-line="3" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/manage/env.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="522">
-          <caret line="218" column="41" selection-start-line="218" selection-start-column="41" selection-end-line="218" selection-end-column="41" />
-          <folding>
-            <element signature="e#68#82#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/contrib/keyword.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1422">
-          <caret line="420" column="21" lean-forward="true" selection-start-line="420" selection-start-column="21" selection-end-line="420" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.1/system/python_stubs/-1378015106/_io.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="675">
@@ -731,48 +637,93 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/line_edit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$USER_HOME$/.PyCharm2018.1/system/remote_sources/-1378015106/244682351/contextlib.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="80" selection-start-line="80" selection-end-line="80" />
+        <state relative-caret-position="102">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/contrib/parser.py">
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/keyword.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="199">
-          <caret line="155" column="22" selection-start-line="155" selection-start-column="22" selection-end-line="155" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/remote_sources/-1378015106/244682351/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="261">
-          <caret line="193" selection-start-line="193" selection-end-line="193" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/contrib/control.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="191" selection-start-line="191" selection-end-line="191" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/manage/dispatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1080">
-          <caret line="66" column="31" selection-start-line="66" selection-start-column="31" selection-end-line="66" selection-end-column="31" />
+        <state relative-caret-position="200">
+          <caret line="198" selection-start-line="198" selection-end-line="198" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pysh/manage/middleware.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="32" column="40" lean-forward="true" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="40" />
+        <state relative-caret-position="180">
+          <caret line="100" column="43" selection-start-line="100" selection-start-column="43" selection-end-line="100" selection-end-column="43" />
           <folding>
             <element signature="e#24#61#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.PyCharm2018.1/system/remote_sources/-1378015106/244682351/codecs.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="296" lean-forward="true" selection-start-line="296" selection-end-line="296" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="13" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/manage/env.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="125" selection-start-line="125" selection-end-line="125" />
+          <folding>
+            <element signature="e#68#82#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/manage/dispatch.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="248" selection-start-line="248" selection-end-line="248" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/control.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="316" selection-start-line="316" selection-end-line="316" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/command/pysh.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="39" selection-start-line="39" selection-end-line="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
         </state>
       </provider>
     </entry>

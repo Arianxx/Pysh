@@ -3,7 +3,7 @@
 注册特殊符号或关键字。对tokens做一些与符号本身相关必要的处理（如清洗），具体的调用逻辑交给parser.Handle,
 复杂的行为交给control.SymbolAction/control.KeywordAction。
 
-TODO: 类应该按照功能命名而非符号。然而自从开始的几个类名没留意后，惯性的力量是巨大的……
+类应该按照功能命名而非符号。然而自从开始的几个类名没留意后，惯性的力量是巨大的……
 """
 import os
 import re
@@ -357,6 +357,24 @@ class DoubleLeftAngel:
         return tag, tokens
 
 
+@Symbol.register
+class Pipe:
+    """
+    管道功能
+    """
+    char = '|'
+    name = 'pipe'
+    derc = '前一个命令的输出，作为下一个命令的输入'
+
+    @classmethod
+    def handle(cls, tokens):
+        if cls.char in tokens:
+            index = [index
+                     for index, value in enumerate(tokens)
+                     if value == cls.char]
+            return split_tokens(tokens, index)
+
+
 # 以下为关键字注册
 
 @Keyword.register
@@ -484,3 +502,29 @@ def get_sub_tokens(sub_tokens, tokens):
                 return sub_tokens
         else:
             return sub_tokens
+
+
+def split_tokens(tokens, index):
+    """
+    用于管道功能，按管道出现位置分割命令
+
+    :param tokens: 初步分割后的命令列表
+    :param index: 管道在列表中出现的位置列表
+    :return: 分割后的列表
+    """
+    result = [[]]
+    result[-1].extend(tokens[0:index[0]])
+    for i, _ in enumerate(index):
+        result.append([])
+        if i < len(index) - 1:
+            try:
+                result[-1].extend(
+                    tokens[index[i] + 1:index[i + 1]]
+                )
+            except IndexError:
+                result.pop(-1)
+                break
+    result[-1].extend(
+        tokens[index[i] + 1:]
+    )
+    return result

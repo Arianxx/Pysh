@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
-import contextlib, sys, os, itertools
+import contextlib
+import itertools
+import os
+import sys
 from itertools import chain
 
 from ..manage.env import Application, Variable, EnvVariable, History
@@ -35,7 +38,7 @@ class StdoutRedirection():
         else:
             for num in itertools.count():
                 try:
-                    self.tmp_file = open('temp'+str(num)+'.txt', 'wt')
+                    self.tmp_file = open('stdouttemp' + str(num) + '.txt', 'wt')
                 except FileExistsError:
                     continue
                 else:
@@ -66,16 +69,17 @@ class StdoutRedirection():
             sys.stdout.close()
             sys.stdout = origin_stdout
 
-            with open(self.tmp_file.name, 'rt') as file:
-                self.pipe = file.readlines()
+            if self.tmp_file:
+                with open(self.tmp_file.name, 'rt') as file:
+                    self.pipe = file.readlines()
 
-            os.remove(self.tmp_file.name)
+                os.remove(self.tmp_file.name)
+
 
 class StdinRedirection():
     """
     重定向输入
     """
-    _source = None
 
     def __init__(self, file_path=None, source=None):
         """
@@ -83,40 +87,39 @@ class StdinRedirection():
         source应该是一个实现了__iter__方法的可迭代对象
         """
         self.file = None
-        self.file_path = file_path
+        self.tmp_file = None
         self.source = source
 
-        if self.file_path:
+        if file_path:
             try:
-                file = open(file_path, 'rt')
+                self.file = open(file_path, 'rt')
             except FileNotFoundError as e:
                 raise e
-            else:
-                self.file = file
+        else:
+            self._from_source()
 
-    def _read(self):
-        """
-        如果没有传入文件对象，就替换sys.stdin的read和readline替换到实现了read和readline
-        方法的实例自身。
-        """
-        if not self.source:
-            raise ValueError("没有输入来源")
-        elif not self._source:
+    def _from_source(self):
+        for num in itertools.count():
             try:
-                self._source = iter(self.source)
-            except TypeError as e:
-                # source没有iter方法
-                raise e
+                self.tmp_file = open('stdintemp' + str(num) + '.txt', 'wt')
+            except FileExistsError:
+                continue
+            else:
+                break
 
-    def read(self, *args, **kwargs):
-        self._read()
+        self._to_temp_file(self.source)
+        self.tmp_file.close()
+        self.tmp_file = open(self.tmp_file.name, 'rt')
+        return
 
-        return '\n'.join(self._source)
+    def _to_temp_file(self, source):
+        for line in source:
+            if type(line) != str:
+                self._to_temp_file(line)
+            else:
+                self.tmp_file.write(line)
 
-    def readline(self, *args, **kwargs):
-        self._read()
-
-        return next(self._source)
+        return
 
     @contextlib.contextmanager
     def context(self):
@@ -125,7 +128,7 @@ class StdinRedirection():
         if self.file:
             sys.stdin = self.file
         else:
-            sys.stdin = self
+            sys.stdin = self.tmp_file
 
         try:
             yield self
@@ -136,9 +139,12 @@ class StdinRedirection():
             raise e
         finally:
             # 还原输入流
-            if self.file:
-                self.file.close()
+            sys.stdin.flush()
+            sys.stdin.close()
             sys.stdin = origin_stdin
+
+            if self.tmp_file:
+                os.remove(self.tmp_file.name)
 
 
 class Completer:
