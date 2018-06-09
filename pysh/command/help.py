@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from ..contrib import line_edit
 from ..contrib.keyword import Symbol, Keyword
 from ..manage.env import Application
 
@@ -10,6 +11,7 @@ class help:
     verbose_1 = False
     verbose_2 = False
     verbose_3 = False
+    le = False
     help = False
     usage = """
 Usage:
@@ -17,6 +19,7 @@ Usage:
     help -v：显示注册的命令
     help -vv：显示注册的命令，以及它们各自的用法（如果有）
     help -vvv：显示注册的命令、用法，以及内建的特殊符号和关键字
+    help -le: 显示行编辑字符
             """
 
     def __init__(self, *args):
@@ -27,6 +30,8 @@ Usage:
             self.verbose_2 = True
         elif '-vvv' in self.args:
             self.verbose_3 = True
+        elif '-le' in self.args:
+            self.le = True
         else:
             self.help = True
 
@@ -75,5 +80,11 @@ Usage:
                     print('\tderc：', keywords[key].derc)
                 except AttributeError:
                     pass
+        elif self.le:
+            mapping = line_edit.KeyMapping._get_map_dict()
+
+            print('\n行编辑字符：')
+            for key, value in mapping.items():
+                print(key, ' : ', value.encode())
 
         return True

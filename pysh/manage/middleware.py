@@ -151,7 +151,7 @@ class Completer:
     @classmethod
     def search_symbol(cls, text, state):
         """
-        用于readline模块，以实现linux下的行编辑自动补全功能
+        用于行编辑，编辑tab键自动补全功能。
         """
         names = [name for name in chain(
             History.history,

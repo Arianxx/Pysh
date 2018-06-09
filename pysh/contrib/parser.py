@@ -50,7 +50,7 @@ class Handler:
                 print(e)
                 return
 
-        tokens = list(filter(lambda token: True if token else False, tokens))
+        tokens = list(filter(lambda token: token, tokens))
         self.tokens = list(map(lambda token: token.strip(), tokens))
 
     @property

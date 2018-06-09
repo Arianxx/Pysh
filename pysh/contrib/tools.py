@@ -12,20 +12,28 @@ class _Getch:
     """
 
     def __init__(self):
-        try:
-            self.getch = self._GetchWindows()
-        except ImportError:
-            self.getch = self._GetchLinux()
+        self.getch = self._GetchLinux
 
     def __call__(self):
-        return self.getch()
+        self._getch()
+
+        try:
+            return self.char.decode()
+        except AttributeError:
+            return self.char
+
+    def _getch(self):
+        self.char = self.getch()
 
     def _GetchWindows(self):
         import msvcrt
         return msvcrt.getch()
 
     def _GetchLinux(self):
-        import sys, tty, termios
+        try:
+            import sys, tty, termios
+        except ModuleNotFoundError:
+            return self._GetchWindows()
         fd = sys.stdin.fileno()
         old_settings = termios.tcgetattr(fd)
         try:
@@ -34,5 +42,10 @@ class _Getch:
         finally:
             termios.tcsetattr(fd, termios.TCSADRAIN, old_settings)
         return ch
+
+
+class LineEndError(ValueError):
+    pass
+
 
 getch = _Getch()

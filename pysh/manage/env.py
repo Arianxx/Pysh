@@ -2,7 +2,8 @@
 """
 处理shell一切环境信息，包括记录注册的应用以及从外部环境读取变量等
 """
-import os, sys
+import os
+import sys
 from collections import deque, OrderedDict
 from datetime import datetime
 from functools import wraps
@@ -13,7 +14,7 @@ class Application:
 
     @staticmethod
     def __new__(cls, *args, **kwargs):
-        # Application是单例。
+        # Application不必要有多个实例
         if not getattr(cls, '_instance', None):
             cls._instance = super().__new__(cls, *args, **kwargs)
 
@@ -24,6 +25,7 @@ class Application:
                 # Win下没有readline模块
                 pass
             else:
+                # 后来在行编辑中自己实现了简单的命令补全
                 readline.parse_and_bind("tab: complete")
                 readline.set_completer(Completer.search_symbol)
 

@@ -6,8 +6,10 @@ TODO: 将参数判断抽象出来，成为单独的一层，应用只需注册�
 """
 
 import os
+import sys
 
 from .exit import ShellExit
+from ..contrib.line_edit import LineInput
 from ..contrib.parser import Parser
 from ..manage.env import Application
 
@@ -42,6 +44,14 @@ Usage:
         return True
 
     def _poll(self):
+        global input
+
+        if sys.platform == 'win32':
+            print('win下行编辑退格时有奇怪的错误，已经关闭行编辑功能')
+            print('切换至linux平台体验行编辑\n')
+        else:
+            input = LineInput
+
         while True:
             line_slogan = self.line_symbol + self.curdir + '$'
             try:
