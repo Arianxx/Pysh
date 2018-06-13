@@ -108,9 +108,9 @@ class Buffer:
         print(' ' * self.offseted, sep='', end='')
         print('\x08' * self.showed, ' ' * self.showed, '\x08' * self.showed, sep='', end='')
         content = ''.join(self.content)
-        self.showed = len(content)
         print(content, sep='', end='')
         print('\x08' * self.offset, sep='', end='')
+        self.showed = len(content)
         self.offseted = self.offset
         sys.stdout.flush()
 

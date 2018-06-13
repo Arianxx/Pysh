@@ -48,7 +48,7 @@ Usage:
 
         if sys.platform == 'win32':
             print('win下行编辑退格时有奇怪的错误，已经关闭行编辑功能')
-            print('切换至linux平台体验行编辑\n')
+            print('切换至linux平台体验行编辑(WSL也不行\n')
         else:
             input = LineInput
 

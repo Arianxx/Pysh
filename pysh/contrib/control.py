@@ -258,11 +258,11 @@ def double_left_angel(self, tokens):
         if tag:
             pipe = []
             while True:
-                token = input('...').strip()
+                token = input('...')
                 if token == tag:
                     break
                 else:
-                    pipe.append(token)
+                    pipe.append(token + '\n')
             si = StdinRedirection(source=pipe)
 
             try:
@@ -318,9 +318,8 @@ def pipe(self, tokens):
             else:
                 si = StdinRedirection(source=sr.pipe)
                 sr = StdoutRedirection()
-                with si.context():
-                    with sr.context() as sr:
-                        Handler(token).run()
+                with si.context(), sr.context() as sr:
+                    Handler(token).run()
 
         self.handler.tokens = None
     return

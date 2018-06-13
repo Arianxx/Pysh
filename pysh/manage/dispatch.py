@@ -75,9 +75,9 @@ class Task(Process):
             # 多进程可能会发生io错误
             print(e)
             rv = False
-        except Exception as e:
+        except Exception:
             # 其它异常向上冒泡
-            raise e
+            raise
         finally:
             # 清理记录
             Processing.remove(self.id)
