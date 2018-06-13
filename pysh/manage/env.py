@@ -218,7 +218,7 @@ class EnvVariable:
             if os.path.isfile(path):
                 cls.cached_path(name, path)
                 return path
-            path = os.path.join(dir, name + 'exe')
+            path = os.path.join(dir, name + '.exe')
             if os.path.isfile(path):
                 cls.cached_path(name, path)
                 return path

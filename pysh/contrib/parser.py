@@ -157,7 +157,7 @@ class Handler:
             if self.args:
                 rv = dispatch.dispatch(self.command, *self.args, backend=self.backend, daemon=self.daemon, join=self.join)
             else:
-                rv = dispatch.di spatch(self.command, backend=self.backend, daemon=self.daemon, join=self.join)
+                rv = dispatch.dispatch(self.command, backend=self.backend, daemon=self.daemon, join=self.join)
         else:
             rv = True
 
@@ -169,7 +169,7 @@ class Handler:
 
         :return: None
         """
-        # 放在这里避免循环导   入
+        # 放在这里避免循环导入
         from .control import SymbolAction, KeywordAction
         self.sa = SymbolAction(self)
         self.ka = KeywordAction(self)
