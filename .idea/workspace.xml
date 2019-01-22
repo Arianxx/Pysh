@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/../../../py/Share/Content/views.py" line="131" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="837e61a2-b6bd-48f8-8fe0-90aa39778003" name="Default" comment="">
+    <list default="true" id="837e61a2-b6bd-48f8-8fe0-90aa39778003" name="Default" comment="feat: refactor line_edit module">
+      <change afterPath="$PROJECT_DIR$/pysh/contrib/LineEdit/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pysh/contrib/LineEdit/action.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/contrib/control_flow.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/contrib/control_flow.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/contrib/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/contrib/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pysh/manage/env.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/manage/env.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pysh/command/help.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/help.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pysh/command/pysh.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/command/pysh.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pysh/contrib/line_edit.py" beforeDir="false" afterPath="$PROJECT_DIR$/pysh/contrib/LineEdit/line_edit.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,7 +17,7 @@
   </component>
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Pysh$dispatch.coverage" NAME="dispatch Coverage Results" MODIFIED="1527844943904" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pysh/manage" />
-    <SUITE FILE_PATH="coverage/Pysh$pysh.coverage" NAME="pysh Coverage Results" MODIFIED="1528893972670" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Pysh$pysh.coverage" NAME="pysh Coverage Results" MODIFIED="1548166302565" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/Pysh$shell.coverage" NAME="shell Coverage Results" MODIFIED="1527844906238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/pysh/command" />
   </component>
   <component name="DatabaseView">
@@ -36,52 +34,51 @@
     <expand />
     <select />
   </component>
+  <component name="FUSProjectUsageTrigger">
+    <session id="1706410076">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.open.time.6" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="py" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="Python" value="14" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="py" value="1434" />
+          <entry key="txt" value="37" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="Python" value="1434" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="Pysh" />
+  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="parser.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pysh/contrib/parser.py">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pysh/contrib/LineEdit/action.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="165" column="18" lean-forward="true" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="control.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pysh/contrib/control.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4194">
-              <caret line="325" selection-start-line="325" selection-end-line="325" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="env.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pysh/manage/env.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3960">
-              <caret line="224" column="13" lean-forward="true" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="line_edit.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pysh/contrib/line_edit.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="890">
-              <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
+            <state relative-caret-position="316">
+              <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
               <folding>
-                <element signature="e#67#83#0" expanded="true" />
+                <element signature="e#0#16#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="tools.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pysh/contrib/tools.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -100,6 +97,8 @@
       <find>deque</find>
       <find>dispatch</find>
       <find>|</find>
+      <find>home</find>
+      <find>clear_prev_char</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -125,18 +124,21 @@
         <option value="$PROJECT_DIR$/pysh/command/cd.py" />
         <option value="$PROJECT_DIR$/pysh/command/exit.py" />
         <option value="$PROJECT_DIR$/pysh/contrib/tools.py" />
-        <option value="$PROJECT_DIR$/pysh/command/help.py" />
         <option value="$PROJECT_DIR$/pysh/manage/middleware.py" />
         <option value="$PROJECT_DIR$/pysh/contrib/keyword.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/pysh/command/pysh.py" />
         <option value="$PROJECT_DIR$/pysh/manage/dispatch.py" />
         <option value="$PROJECT_DIR$/pysh/manage/control_flow.py" />
         <option value="$PROJECT_DIR$/pysh/contrib/control.py" />
-        <option value="$PROJECT_DIR$/pysh/contrib/line_edit.py" />
         <option value="$PROJECT_DIR$/pysh/contrib/parser.py" />
         <option value="$PROJECT_DIR$/pysh/contrib/control_flow.py" />
         <option value="$PROJECT_DIR$/pysh/manage/env.py" />
+        <option value="$PROJECT_DIR$/pysh/contrib/line_edit.py" />
+        <option value="$PROJECT_DIR$/pysh/command/pysh.py" />
+        <option value="$PROJECT_DIR$/pysh/command/help.py" />
+        <option value="$PROJECT_DIR$/pysh/contrib/LineEdit/__init__.py" />
+        <option value="$PROJECT_DIR$/pysh/contrib/LineEdit/line_edit.py" />
+        <option value="$PROJECT_DIR$/pysh/contrib/LineEdit/action.py" />
       </list>
     </option>
   </component>
@@ -146,13 +148,10 @@
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
   </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths />
-  </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
-    <option name="width" value="1934" />
-    <option name="height" value="1087" />
+    <option name="x" value="-8" />
+    <option name="width" value="1935" />
+    <option name="height" value="1088" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -189,6 +188,13 @@
               <item name="Pysh" type="b2602c69:ProjectViewProjectNode" />
               <item name="Pysh" type="462c0819:PsiDirectoryNode" />
               <item name="pysh" type="462c0819:PsiDirectoryNode" />
+              <item name="contrib" type="462c0819:PsiDirectoryNode" />
+              <item name="LineEdit" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Pysh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Pysh" type="462c0819:PsiDirectoryNode" />
+              <item name="pysh" type="462c0819:PsiDirectoryNode" />
               <item name="manage" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -204,12 +210,14 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.editor" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\AMydsik\exercise\py\Pysh\pysh\contrib\LineEdit" />
       <recent name="C:\AMydsik\exercise\临时\py\Pysh\pysh\contrib" />
       <recent name="C:\AMydsik\exercise\临时\py\Pysh\pysh" />
       <recent name="C:\AMydsik\exercise\临时\py\Pysh\pysh\app" />
@@ -246,6 +254,9 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="pysh" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Pysh" />
@@ -265,6 +276,9 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <configuration name="shell" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Pysh" />
@@ -284,6 +298,9 @@
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.shell" />
@@ -357,58 +374,59 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-1" width="1936" height="1089" extended-state="6" />
+    <frame x="-7" y="-7" width="1295" height="735" extended-state="6" />
+    <editor active="true" />
     <layout>
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.79401994" visible="true" weight="0.16518219" />
+      <window_info id="Structure" order="1" sideWeight="0.20598006" side_tool="true" weight="0.16518219" />
+      <window_info id="Favorites" order="2" sideWeight="0.5016611" side_tool="true" weight="0.14979757" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3280757" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35215947" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="5" weight="0.18506835" />
       <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5012547" side_tool="true" weight="0.16929547" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.4996506" weight="0.17139852" />
+      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.4996506" weight="0.17109634" />
       <window_info anchor="bottom" id="Version Control" order="9" weight="0.2250263" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.20294426" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23133543" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4987453" weight="0.16929547" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10021322" />
-      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="3" weight="0.20735608" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.18611987" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.23667377" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4987453" weight="0.24916944" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
+      <window_info active="true" anchor="bottom" id="Messages" order="14" sideWeight="0.49825296" visible="true" weight="0.32890365" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49825296" weight="0.32912722" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3280757" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.23667377" />
+      <window_info anchor="right" id="Database" order="4" weight="0.20735608" />
+      <window_info anchor="right" id="SciView" order="5" />
     </layout>
     <layout-to-restore>
-      <window_info anchor="bottom" id="Debug" order="11" weight="0.2723449" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.23133543" />
-      <window_info anchor="right" id="Remote Host" order="3" weight="0.23667377" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.4996506" weight="0.17139852" />
-      <window_info anchor="bottom" id="TODO" order="5" weight="0.18506835" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.1829653" />
-      <window_info anchor="bottom" id="Python Console" order="10" weight="0.20294426" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.79401994" visible="true" weight="0.16518219" />
+      <window_info id="Structure" order="1" sideWeight="0.20598006" side_tool="true" visible="true" weight="0.16518219" />
+      <window_info id="Favorites" order="2" sideWeight="0.5016611" side_tool="true" weight="0.14979757" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="right" id="Database" order="5" weight="0.20735608" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4987453" visible="true" weight="0.16929547" />
-      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5012547" side_tool="true" weight="0.16929547" />
-      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="4" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3280757" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.35215947" />
+      <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="5" weight="0.18506835" />
+      <window_info anchor="bottom" id="Event Log" order="6" sideWeight="0.5012547" side_tool="true" weight="0.16929547" />
+      <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="File Transfer" order="8" sideWeight="0.4996506" weight="0.17109634" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.2250263" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.20294426" />
+      <window_info anchor="bottom" id="Debug" order="11" weight="0.18611987" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.4987453" weight="0.24916944" />
+      <window_info anchor="bottom" id="Docker" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.49825296" weight="0.32912722" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15031983" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Remote Host" order="3" weight="0.23667377" />
+      <window_info anchor="right" id="Database" order="4" weight="0.20735608" />
+      <window_info anchor="right" id="SciView" order="5" />
     </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,7 +468,8 @@
     <MESSAGE value="基础/选做要求all over" />
     <MESSAGE value="完善管道功能" />
     <MESSAGE value="实现行编辑过程" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现行编辑过程" />
+    <MESSAGE value="feat: refactor line_edit module" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: refactor line_edit module" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -467,7 +486,6 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="195" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
@@ -500,51 +518,10 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pysh/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/manage/dispatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1764">
-          <caret line="99" column="21" lean-forward="true" selection-start-line="99" selection-start-column="21" selection-end-line="99" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="16" column="27" lean-forward="true" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/manage/dispatch.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1314">
-          <caret line="74" column="19" selection-start-line="74" selection-start-column="19" selection-end-line="74" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pysh/contrib/input.py" />
     <entry file="file://$PROJECT_DIR$/pysh/contrib/print.py" />
     <entry file="file://$PROJECT_DIR$/pysh/excute/__init__.py" />
-    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/codecs.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="328" lean-forward="true" selection-start-line="328" selection-end-line="328" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/codecs.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/urllib/parse.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="236">
@@ -552,22 +529,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/ntpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="550" selection-start-line="550" selection-end-line="550" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/ntpath.py" />
     <entry file="file://$PROJECT_DIR$/pysh/contrib/statements.py" />
     <entry file="file://$PROJECT_DIR$/pysh/contrib/key.py" />
-    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/collections/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="403" selection-start-line="403" selection-end-line="403" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/collections/__init__.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/shlex.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="470">
@@ -593,13 +558,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/re.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="221" selection-start-line="221" selection-end-line="221" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/Pysh-Dgxlc41v/Lib/re.py" />
     <entry file="file://$PROJECT_DIR$/pysh/.env" />
     <entry file="file://$PROJECT_DIR$/pysh/manage/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
@@ -689,13 +648,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/command/help.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="85" column="26" selection-start-line="85" selection-start-column="26" selection-end-line="85" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -736,37 +688,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/command/pysh.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="468">
-          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
-          <folding>
-            <element signature="e#143#152#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pysh/manage/dispatch.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4158">
           <caret line="237" lean-forward="true" selection-start-line="237" selection-end-line="237" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/contrib/tools.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/contrib/line_edit.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="890">
-          <caret line="65" column="32" lean-forward="true" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="32" />
-          <folding>
-            <element signature="e#67#83#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -787,24 +712,79 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/parser.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="182" column="30" lean-forward="true" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pysh/contrib/control.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4194">
+        <state relative-caret-position="518">
           <caret line="325" selection-start-line="325" selection-end-line="325" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pysh/manage/env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3960">
-          <caret line="224" column="13" lean-forward="true" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="13" />
+        <state relative-caret-position="518">
+          <caret line="224" column="13" selection-start-line="224" selection-start-column="13" selection-end-line="224" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pysh/contrib/parser.py">
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/tools.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="165" column="18" lean-forward="true" selection-start-line="165" selection-start-column="18" selection-end-line="165" selection-end-column="18" />
+        <state relative-caret-position="216">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/command/help.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1566">
+          <caret line="87" column="36" lean-forward="true" selection-start-line="87" selection-start-column="36" selection-end-line="87" selection-end-column="36" />
+          <folding>
+            <element signature="e#24#65#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/command/pysh.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <caret line="11" column="40" lean-forward="true" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/LineEdit/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="44" lean-forward="true" selection-start-line="1" selection-start-column="44" selection-end-line="1" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/LineEdit/line_edit.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="244" column="41" selection-start-line="244" selection-start-column="41" selection-end-line="244" selection-end-column="41" />
+          <folding>
+            <element signature="e#67#76#0" expanded="true" />
+            <marker date="1548199465034" expanded="true" signature="5060:5066" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pysh/contrib/LineEdit/action.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="63" column="25" lean-forward="true" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#16#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

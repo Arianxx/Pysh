@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from ..contrib import line_edit
+from ..contrib.LineEdit import KeyMapping
 from ..contrib.keyword import Symbol, Keyword
 from ..manage.env import Application
 
@@ -81,7 +81,7 @@ Usage:
                 except AttributeError:
                     pass
         elif self.le:
-            mapping = line_edit.KeyMapping._get_map_dict()
+            mapping = KeyMapping._get_map_dict()
 
             print('\n行编辑字符：')
             for key, value in mapping.items():

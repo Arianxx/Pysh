@@ -9,7 +9,7 @@ import os
 import sys
 
 from .exit import ShellExit
-from ..contrib.line_edit import LineInput
+from ..contrib.LineEdit import LineInput
 from ..contrib.parser import Parser
 from ..manage.env import Application
 

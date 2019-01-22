@@ -2,14 +2,12 @@
 实现行编辑的模块。
 用这个模块中的LineInput类替换标准的input函数以在想要实现可行编辑的地方使用行编辑。
 """
-import itertools
 import re
 import sys
+from collections import defaultdict
 
-from .tools import getch, LineEndError
-from ..command.exit import ShellExit
-from ..manage.env import History
-from ..manage.middleware import Completer
+from pysh.contrib.tools import getch, LineEndError
+from pysh.manage.env import History
 
 
 class Buffer:
@@ -47,29 +45,29 @@ class Buffer:
         if self._group_key == KeyMapping.left:
             self.pop()
             self._group_key = ''
-            return 'left'
+            return KeyMapping.left
         elif self._group_key == KeyMapping.right:
             self.pop()
             self._group_key = ''
-            return 'right'
+            return KeyMapping.right
         elif self._group_key == KeyMapping.up:
             self.pop()
             self._group_key = ''
-            return 'up'
+            return KeyMapping.up
         elif self._group_key == KeyMapping.down:
             self.pop()
             self._group_key = ''
-            return 'down'
+            return KeyMapping.down
         elif self._group_key == KeyMapping.home:
             self.pop()
             self.pop()
             self._group_key = ''
-            return 'home'
+            return KeyMapping.home
         elif self._group_key == KeyMapping.end:
             self.pop()
             self.pop()
             self._group_key = ''
-            return 'end'
+            return KeyMapping.end
 
         if len(self._group_key) >= 4:
             self._group_key = ''
@@ -154,6 +152,8 @@ class KeyMapping:
 
 
 class LineInput:
+    dispatcher = defaultdict(list)
+
     @staticmethod
     def __new__(cls, slogan):
         buffer = Buffer()
@@ -180,49 +180,28 @@ class LineInput:
         return text
 
     @classmethod
+    def add_action(cls, symbols=(None)):
+        def decorator(func):
+            for symbol in symbols:
+                cls.dispatcher[symbol].append(func)
+            return func
+
+        return decorator
+
+    @classmethod
     def _handler(cls, char, buffer):
-        """
-        好吧，我承认这条长达几十行的if语句实在这里太丑太僵硬了…像收集命令那样，通过符号注册然后轮询匹配应该会好看一点吧
-        等有闲心再重构吧=_=
-        """
         is_group = buffer._group_key_buffer(char)
 
         if is_group:
-            cls.group_key(buffer, is_group)
+            char = is_group
         elif ord(char) in range(32, 127):
             buffer.insert(char, buffer.offset)
-        elif char == KeyMapping.end1 or char == KeyMapping.end2:
-            raise LineEndError
-        elif char == KeyMapping.bksp or char == KeyMapping.clear_prev_char:
-            cls.bksp(buffer)
-        elif char == KeyMapping.clear_prev_cursor:
-            cls.clear_prev_cursor(buffer)
-        elif char == KeyMapping.recover_content:
-            cls.recover_content(buffer)
-        elif char == KeyMapping.completion:
-            cls.completion(buffer)
-        elif char == KeyMapping.prev_history:
-            cls.up(buffer)
-        elif char == KeyMapping.next_history:
-            cls.down(buffer)
-        elif char == KeyMapping.cursor_to_next:
-            cls.right(buffer)
-        elif char == KeyMapping.cursor_to_prev:
-            cls.left(buffer)
-        elif char == KeyMapping.cursor_to_top:
-            cls.cursor_to_top(buffer)
-        elif char == KeyMapping.cursor_to_end:
-            cls.cursor_to_end(buffer)
-        elif char == KeyMapping.clear_prev_word:
-            cls.clear_prev_word(buffer)
-        elif char == KeyMapping.clear_cursor_to_end:
-            cls.clear_cursor_to_end(buffer)
-        elif char == KeyMapping.swap_two_char:
-            cls.swap_two_char(buffer)
-        elif char == KeyMapping.exit_shell or char == KeyMapping.exit_program:
-            cls.exit_shell()
-        else:
-            pass
+        elif char not in cls.dispatcher:
+            char = None
+
+        if char in cls.dispatcher:
+            for func in cls.dispatcher[char]:
+                func(buffer)
 
         buffer.show()
 
@@ -270,177 +249,6 @@ class LineInput:
                 return History.history[0]
 
     @classmethod
-    def _show_history(cls, buffer, arrow):
-        """
-        展示历史记录，arrow代表方向
-        """
-        history = cls._get_history(buffer, arrow)
-
-        buffer.content = list(history)
-        buffer.offseted = buffer.offset = 0
-        return True
-
-    @classmethod
-    def bksp(cls, buffer):
-        """
-        退格删除
-        """
-        buffer.pop()
-
-    @classmethod
-    def completion(cls, buffer):
-        """
-        Tab键命令补全
-        """
-        if not buffer.content:
-            return
-
-        text = ''.join(buffer.content)
-        results = []
-        for num in itertools.count():
-            result = Completer.search_symbol(text, num)
-            if not result:
-                break
-            else:
-                results.append(result)
-
-        results = list(set(results))
-
-        if len(results) == 1:
-            buffer.clear()
-            buffer.content = list(results[0])
-        elif not results:
-            return False
-        else:
-            print('\n')
-            for result in results:
-                print(result, end=' ')
-            print('\n')
-
-            print(buffer.slogan, ':', text, sep='', end='')
-        sys.stdout.flush()
-
-        return True
-
-    @classmethod
-    def group_key(cls, buffer, key_name):
-        """
-        组合键判断
-        """
-        if key_name == 'left':
-            cls.left(buffer)
-        elif key_name == 'right':
-            cls.right(buffer)
-        elif key_name == 'up':
-            cls.up(buffer)
-        elif key_name == 'down':
-            cls.down(buffer)
-        elif key_name == 'home':
-            cls.cursor_to_top(buffer)
-        elif key_name == 'end':
-            cls.cursor_to_end(buffer)
-
-    @classmethod
-    def left(cls, buffer):
-        """
-        左方向键，光标左移。
-        """
-        if buffer.offset < len(buffer.content):
-            buffer.offset += 1
-
-    @classmethod
-    def right(cls, buffer):
-        """
-        右方向键，光标右移
-        """
-        if buffer.offset > 0:
-            buffer.offset -= 1
-
-    @classmethod
-    def up(cls, buffer):
-        """
-        上方向键，上一条历史记录
-        """
-        cls._show_history(buffer, 1)
-
-    @classmethod
-    def down(cls, buffer):
-        """
-        下方向键，下一条历史记录
-        """
-        cls._show_history(buffer, 0)
-
-    @classmethod
-    def clear_prev_cursor(cls, buffer):
-        """
-        清除光标之前的内容
-        """
-        length = len(buffer.content)
-        buffer._prev_remove = buffer.content[:length - buffer.offset]
-        buffer.content = buffer.content[length - buffer.offset:]
-
-    @classmethod
-    def recover_content(cls, buffer):
-        """
-        恢复之前清除的内容
-        """
-        if buffer._prev_remove:
-            buffer.content = buffer._prev_remove + buffer.content
-
-    @classmethod
-    def cursor_to_top(cls, buffer):
-        """
-        移动光标到行首
-        """
-        buffer.offset = len(buffer.content)
-
-    @classmethod
-    def cursor_to_end(cls, buffer):
-        """
-        移动光标到行尾
-        """
-        buffer.offset = 0
-
-    @classmethod
-    def clear_prev_word(cls, buffer):
-        """
-        清除光标之前的一个单词
-        """
-        index = len(buffer.content) - buffer.offset - 1
-        while index >= 0:
-            if buffer.content[index] != ' ' \
-                    and buffer.content[index] != '\t':
-                buffer.content.pop(index)
-            else:
-                break
-
-            index -= 1
-
-    @classmethod
-    def clear_cursor_to_end(cls, buffer):
-        """
-        清除光标之后的内容
-        """
-        if buffer.offset:
-            buffer.content = buffer.content[:-buffer.offset]
-
-    @classmethod
-    def swap_two_char(cls, buffer):
-        """
-        交换光标之前的两个字符
-        """
-        index = len(buffer.content) - buffer.offset - 1
-        buffer.content[index], buffer.content[index - 1] = buffer.content[index - 1], buffer.content[index]
-
-    @classmethod
-    def exit_shell(cls):
-        """
-        退出shell
-        """
-        print('\n')
-        raise ShellExit
-
-    @classmethod
     def direct_prev_history(cls, buffer):
         """
         直接执行上一条历史记录
@@ -478,3 +286,14 @@ class LineInput:
             index -= 1
 
         return ''
+
+
+def show_history(buffer, arrow):
+    """
+    展示历史记录，arrow代表方向
+    """
+    history = LineInput._get_history(buffer, arrow)
+
+    buffer.content = list(history)
+    buffer.offseted = buffer.offset = 0
+    return True
